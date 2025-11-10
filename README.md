@@ -1,2 +1,0 @@
-# SIFA
-Swans Island Demo
