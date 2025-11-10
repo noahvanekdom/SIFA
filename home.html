@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIFA Home</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        
+        h1 { 
+            font-size: 3em; 
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle { 
+            font-size: 1.2em; 
+            opacity: 0.95;
+        }
+        
+        nav {
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover { background: #2c3e50; }
+        nav a.active { background: #2980b9; }
+        
+        main { padding: 40px 30px; }
+        
+        .hero {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h2 {
+            color: #2980b9;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        
+        .info-card {
+            background: #ecf0f1;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .info-card p {
+            color: #34495e;
+            font-size: 1.05em;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .highlight h3 {
+            color: #856404;
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+        
+        .notice {
+            background: #d1ecf1;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #17a2b8;
+            font-style: italic;
+        }
+        
+        footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SIFA</h1>
+            <p class="subtitle">Swan's Island First Aid</p>
+        </header>
+        
+        <nav>
+            <a href="home.html" class="active">Home</a>
+            <a href="general-information.html">General Information</a>
+            <a href="about-swans-island.html">About Swan's Island</a>
+            <a href="volunteer-info.html">Volunteer Info</a>
+            <a href="volunteer-details.html">Volunteer Details</a>
+            <a href="team.html">Team</a>
+            <a href="donate.html">Donate</a>
+        </nav>
+        
+        <main>
+            <div class="hero">
+                <h2>Welcome to Swan's Island First Aid</h2>
+                <p>A volunteer, part time first aid clinic for all Swan's Island, Maine residents and visitors</p>
+            </div>
+
+            <div class="info-card">
+                <p>SIFA is an offshoot of the Maine Community Health Needs Assessment project in 2024 and 2025</p>
+            </div>
+
+            <div class="info-card">
+                <p>SIFA goals were developed by a working group of Swan's Island residents</p>
+            </div>
+
+            <div class="info-card">
+                <p>The SIFA concept was inspired by the successful Monhegan Island "Doc on a Rock" program</p>
+            </div>
+
+            <div class="info-card">
+                <p>SIFA will be an independent non-profit organization which will work in a collaborative relationship with the Town of Swan's Island</p>
+            </div>
+
+            <div class="highlight">
+                <h3>Pilot Project</h3>
+                <p>July and August, 2026</p>
+            </div>
+
+            <div class="notice">
+                <strong>Website Under Construction</strong>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Swan's Island First Aid</p>
+        </footer>
+    </div>
+</body>
+</html>
