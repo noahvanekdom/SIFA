@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIFA Home - Swan's Island First Aid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #e6f2ff 0%, #f8f9fa 50%, #fff 100%);
+            min-height: 100vh;
+        }
+
+        /* Decorative Background Elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(44, 82, 130, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(72, 187, 120, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(26, 54, 93, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            border-left: 6px solid #2c5282;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            color: #2c5282;
+            font-size: 2.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.9;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 5px solid #2c5282;
+            position: relative;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(44, 82, 130, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .info-card:hover::before {
+            opacity: 1;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(44, 82, 130, 0.2);
+            border-top-color: #48bb78;
+        }
+
+        .info-card h3 {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .info-card:hover h3 {
+            color: #1a365d;
+        }
+
+        .info-card p {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Pilot Project Banner */
+        .pilot-banner {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 10px 40px rgba(72, 187, 120, 0.3);
+            position: relative;
+        }
+
+        .pilot-banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pilot-banner h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .pilot-banner p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Under Construction Notice */
+        .construction {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe8a1 100%);
+            border: 3px solid #ffc107;
+            color: #856404;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a365d 0%, #0f2744 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 5rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+
+        footer p {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero {
+                padding: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.7rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SIFA Home</h1>
+            <p class="subtitle">Swan's Island First Aid</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to Swan's Island First Aid</h2>
+                <p>A volunteer, part-time first aid clinic for all Swan's Island, Maine residents and visitors.</p>
+                <p>We are dedicated to providing accessible healthcare services to our island community, ensuring that both residents and visitors have access to quality first aid care when they need it most.</p>
+            </div>
+        </section>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon">🏥</div>
+                <h3>Community Health Initiative</h3>
+                <p>SIFA is an offshoot of the Maine Community Health Needs Assessment project in 2024 and 2025, created to address the specific healthcare needs of our island community.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">🤝</div>
+                <h3>Community-Driven Goals</h3>
+                <p>SIFA goals were developed by a working group of Swan's Island residents who understand the unique challenges and needs of island life.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">⚕️</div>
+                <h3>Inspired by Success</h3>
+                <p>The SIFA concept was inspired by the successful Monhegan Island "Doc on a Rock" program, bringing proven island healthcare solutions to Swan's Island.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">🏛️</div>
+                <h3>Independent & Collaborative</h3>
+                <p>SIFA will be an independent non-profit organization which will work in a collaborative relationship with the Town of Swan's Island.</p>
+            </div>
+        </div>
+
+        <div class="pilot-banner">
+            <div class="pilot-banner-content">
+                <h3>Pilot Project</h3>
+                <p>July and August 2026</p>
+            </div>
+        </div>
+
+        <div class="construction">
+            ⚠️ Website Under Construction - More information coming soon!
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Swan's Island First Aid (SIFA). Serving the Swan's Island community with compassion and care.</p>
+    </footer>
+</body>
+</html>

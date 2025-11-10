@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SIFA Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #e6f2ff 0%, #f8f9fa 50%, #fff 100%);
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(44, 82, 130, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(72, 187, 120, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(26, 54, 93, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .page-title {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border-left: 6px solid #2c5282;
+        }
+
+        .page-title h2 {
+            color: #2c5282;
+            font-size: 2.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .emergency-banner {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            border: 3px solid #dc3545;
+            color: #721c24;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 30px rgba(220, 53, 69, 0.2);
+        }
+
+        .emergency-banner h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #721c24;
+            font-weight: 700;
+        }
+
+        .emergency-banner p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .info-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .info-section h3 {
+            color: #2c5282;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .info-section p {
+            color: #4a5568;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid #2c5282;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(44, 82, 130, 0.2);
+            border-top-color: #48bb78;
+        }
+
+        .contact-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .contact-card h3 {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .contact-card:hover h3 {
+            color: #1a365d;
+        }
+
+        .contact-card p {
+            color: #4a5568;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-card a {
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .construction-notice {
+            background: linear-gradient(135deg, #e6f2ff 0%, #cfe7ff 100%);
+            border-left: 4px solid #2c5282;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(44, 82, 130, 0.15);
+        }
+
+        .construction-notice p {
+            color: #2c5282;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a365d 0%, #0f2744 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 5rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+
+        footer p {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title,
+            .contact-card,
+            .info-section {
+                padding: 1.5rem;
+            }
+
+            .contact-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SIFA Home</h1>
+            <p class="subtitle">Swan's Island First Aid</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-title">
+            <h2>Contact Us</h2>
+        </div>
+
+        <div class="emergency-banner">
+            <h3>⚠️ Emergency? Call 911</h3>
+            <p>For life-threatening emergencies, always call 911 immediately.</p>
+        </div>
+
+        <div class="info-section">
+            <h3>Get In Touch</h3>
+            <p>We're excited to connect with the Swan's Island community as we develop SIFA. Whether you're a resident, visitor, potential volunteer, or simply interested in learning more about our mission, we'd love to hear from you.</p>
+            <p>As we prepare for our pilot project launch in July and August 2026, we welcome your questions, suggestions, and expressions of interest in supporting our work.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Location</h3>
+                <p><strong>Swan's Island, Maine</strong></p>
+                <p>Serving all of Swan's Island and its visitors</p>
+                <p>Specific clinic location to be announced</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>For inquiries and information:</p>
+                <p><a href="mailto:info@sifahome.org">info@sifahome.org</a></p>
+                <p style="font-size: 0.9rem; color: #718096; margin-top: 1rem;">(Email address coming soon)</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🤝</div>
+                <h3>Get Involved</h3>
+                <p>Interested in volunteering or supporting SIFA?</p>
+                <p>We'll be sharing opportunities to get involved as we approach our pilot launch.</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🏛️</div>
+                <h3>Community Partnership</h3>
+                <p>SIFA works in collaboration with:</p>
+                <p><strong>Town of Swan's Island</strong></p>
+                <p>Local emergency services and community organizations</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Hours of Operation</h3>
+            <p><strong>Pilot Project: July & August 2026</strong></p>
+            <p>Part-time clinic hours will be announced as we approach the pilot launch date. Our schedule will be designed to best serve the needs of residents and summer visitors during the peak season.</p>
+        </div>
+
+        <div class="construction-notice">
+            <p>📝 This website is under construction. Contact information will be updated as we finalize our organizational structure and prepare for our 2026 launch. Thank you for your patience and interest in SIFA!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Swan's Island First Aid (SIFA). Serving the Swan's Island community with compassion and care.</p>
+    </footer>
+</body>
+</html>
