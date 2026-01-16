@@ -4,153 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Swan's Island - SIFA</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 50px 30px;
-            text-align: center;
-        }
-        
-        h1 { 
-            font-size: 3em; 
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle { 
-            font-size: 1.2em; 
-            opacity: 0.95;
-        }
-        
-        nav {
-            background: #34495e;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            transition: background 0.3s;
-        }
-        
-        nav a:hover { background: #2c3e50; }
-        nav a.active { background: #2980b9; }
-        
-        main { padding: 40px 30px; }
-        
-        .page-title {
-            text-align: center;
-            padding: 40px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .page-title h2 {
-            color: #2980b9;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .content-box {
-            background: #ecf0f1;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .content-box p {
-            color: #34495e;
-            font-size: 1.05em;
-            margin-bottom: 15px;
-        }
-        
-        .content-box p:last-child { margin-bottom: 0; }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .feature {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-top: 4px solid #27ae60;
-        }
-        
-        .feature h3 {
-            color: #27ae60;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        
-        .feature p {
-            color: #7f8c8d;
-            line-height: 1.6;
-        }
-        
-        .link-box {
-            background: #e8eaf6;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 30px;
-            border-left: 4px solid #5c6bc0;
-        }
-        
-        .link-box h3 {
-            color: #3f51b5;
-            margin-bottom: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #5c6bc0;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        
-        .btn:hover { background: #3f51b5; }
-        
-        footer {
-            background: #34495e;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -170,16 +24,16 @@
         </nav>
         
         <main>
-            <div class="page-title">
+            <div class="hero">
                 <h2>About Swan's Island</h2>
                 <p>Discover the beauty of Downeast Maine</p>
             </div>
 
-            <div class="content-box">
+            <div class="box box--default">
                 <p>Swan's Island is an unbridged, ferry-dependent island located in Downeast Maine, not far from Acadia National Park. The island is reached by a daily (multiple trips per day), year-round ferry from Bass Harbor, ME. There are roughly 425 year-round residents, but that number can triple in the summer when seasonal residents and visitors arrive.</p>
             </div>
 
-            <div class="content-box">
+            <div class="box box--default">
                 <p>Swan's Island town services include a Fire Department and EMS with ambulance transport. There is also a US Post Office, a modern library offering various programs and activities, and a historic lighthouse on the island. There are many hiking trails and scenic viewpoints on the island, as well as a few white sand beaches.</p>
             </div>
 
@@ -215,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="link-box">
+            <div class="box box--link box--centered">
                 <h3>Learn More About Swan's Island</h3>
                 <a href="https://www.townofswansisland.gov/explore/attractions.php" class="btn" target="_blank">Town Website</a>
             </div>

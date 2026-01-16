@@ -4,168 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - SIFA</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 50px 30px;
-            text-align: center;
-        }
-        
-        h1 { 
-            font-size: 3em; 
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle { 
-            font-size: 1.2em; 
-            opacity: 0.95;
-        }
-        
-        nav {
-            background: #34495e;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            transition: background 0.3s;
-        }
-        
-        nav a:hover { background: #2c3e50; }
-        nav a.active { background: #2980b9; }
-        
-        main { padding: 40px 30px; }
-        
-        .page-title {
-            text-align: center;
-            padding: 40px;
-            background: #e8f5e9;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .page-title h2 {
-            color: #27ae60;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .page-title p {
-            color: #229954;
-            font-size: 1.1em;
-        }
-        
-        .donate-box {
-            background: #d4edda;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            border-left: 4px solid #27ae60;
-            margin-bottom: 25px;
-        }
-        
-        .donate-box h3 {
-            color: #155724;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        
-        .donate-box p {
-            color: #155724;
-            font-size: 1.05em;
-        }
-        
-        .notice {
-            background: #fff3cd;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .notice p {
-            color: #856404;
-            font-size: 1.05em;
-            margin-bottom: 15px;
-        }
-        
-        .notice p:last-child { margin-bottom: 0; }
-        
-        .notice a {
-            color: #856404;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .notice a:hover { text-decoration: underline; }
-        
-        .impact {
-            background: #ecf0f1;
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 30px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .impact h3 {
-            color: #2c3e50;
-            font-size: 1.4em;
-            margin-bottom: 20px;
-        }
-        
-        .impact ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .impact li {
-            color: #34495e;
-            font-size: 1.05em;
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .impact li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #27ae60;
-            font-weight: bold;
-        }
-        
-        footer {
-            background: #34495e;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -185,26 +24,26 @@
         </nav>
         
         <main>
-            <div class="page-title">
+            <div class="hero">
                 <h2>Support SIFA</h2>
                 <p>Help us provide essential healthcare to the Swan's Island community</p>
             </div>
 
-            <div class="donate-box">
+            <div class="box box--success box--centered">
                 <h3>Tax-Deductible Donations</h3>
                 <p>Your generous contribution helps ensure that Swan's Island residents and visitors have access to quality first aid care during the busy summer months.</p>
             </div>
 
-            <div class="notice">
+            <div class="box box--warning box--centered">
                 <p><strong>Donation Portal Coming Soon</strong></p>
                 <p>We are currently setting up our secure online donation system. Check back soon for easy ways to support SIFA!</p>
                 <p style="margin-top: 20px;">In the meantime, if you'd like to contribute or have questions about supporting SIFA, please contact us at <a href="mailto:sifaclinic.team@gmail.com">sifaclinic.team@gmail.com</a></p>
             </div>
 
-            <div class="impact">
+            <div class="box box--default">
                 <h3>Your Impact</h3>
-                <p style="margin-bottom: 20px;">Donations to SIFA help support:</p>
-                <ul>
+                <p>Donations to SIFA help support:</p>
+                <ul class="checklist">
                     <li>Medical supplies and equipment for the First Aid station</li>
                     <li>Housing and transportation for volunteer medical providers</li>
                     <li>Training and certification for local EMS volunteers</li>

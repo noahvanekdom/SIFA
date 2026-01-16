@@ -4,171 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer Details - SIFA</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 50px 30px;
-            text-align: center;
-        }
-        
-        h1 { 
-            font-size: 3em; 
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle { 
-            font-size: 1.2em; 
-            opacity: 0.95;
-        }
-        
-        nav {
-            background: #34495e;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 18px;
-            transition: background 0.3s;
-            font-size: 0.95em;
-        }
-        
-        nav a:hover { background: #2c3e50; }
-        nav a.active { background: #2980b9; }
-        
-        main { padding: 40px 30px; }
-        
-        .page-header {
-            text-align: center;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .page-header h2 {
-            color: #2980b9;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        
-        .intro {
-            background: #ecf0f1;
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            margin-bottom: 30px;
-        }
-        
-        .intro p {
-            color: #34495e;
-            font-size: 1.05em;
-            margin-bottom: 15px;
-        }
-        
-        .intro p:last-child { margin-bottom: 0; }
-        
-        .section {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-top: 4px solid #5c6bc0;
-        }
-        
-        .section h3 {
-            color: #3f51b5;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        
-        .section h4 {
-            color: #5c6bc0;
-            font-size: 1.2em;
-            margin: 20px 0 10px 0;
-        }
-        
-        .section p {
-            color: #555;
-            font-size: 1.05em;
-            margin-bottom: 15px;
-        }
-        
-        .section a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-        
-        .section a:hover { text-decoration: underline; }
-        
-        .cta {
-            background: linear-gradient(135deg, #27ae60, #229954);
-            color: white;
-            padding: 35px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .cta h3 {
-            font-size: 1.6em;
-            margin-bottom: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #27ae60;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 10px;
-            transition: background 0.3s;
-        }
-        
-        .btn:hover { background: #ecf0f1; }
-        
-        .cta a.email {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        footer {
-            background: #34495e;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container container--wide">
         <header>
             <h1>SIFA</h1>
             <p class="subtitle">Swan's Island First Aid</p>
@@ -185,31 +24,31 @@
         </nav>
         
         <main>
-            <div class="page-header">
+            <div class="hero">
                 <h2>Medical Volunteer Program Details</h2>
                 <p>Comprehensive information for prospective SIFA volunteers</p>
             </div>
 
-            <div class="intro">
+            <div class="box box--default">
                 <p><strong>Swan's Island First Aid is launching a pilot project in the summer of 2026.</strong> The goal of SIFA is to ensure that the Swan's Island community and its visitors have access to a licensed medical provider during the busiest summer months. Volunteer licensed medical providers (MDs, DOs, NPs, PAs) will see patients with minor injuries and illness at our free walk-in first aid station. They may also assist our EMS team if requested for triage of emergency calls.</p>
             </div>
 
-            <div class="section">
+            <div class="box box--card">
                 <h3>Medical Providers</h3>
                 <p>We are specifically looking for MDs, DOs, NPs and PAs with primary care, urgent care, ER or wilderness medicine experience who are CPR/AED certified. Providers will carry a pager 24/7 and respond to (infrequent) emergency 911 calls if requested by EMS. They will also staff a walk-in First Aid station for 2 hours per day - Monday through Friday. We anticipate that this will be a unique and exciting opportunity professionally as well as a huge contribution to the Swan's Island community.</p>
             </div>
 
-            <div class="section">
+            <div class="box box--card">
                 <h3>Housing</h3>
                 <p>A Swan's Island house or cabin with 1-2 bedrooms, a fully equipped kitchen and bathroom, and internet access will be provided free of charge for the medical volunteer and their family.</p>
             </div>
 
-            <div class="section">
+            <div class="box box--card">
                 <h3>Experiencing Swan's Island</h3>
                 <p>We expect there will be ample time for medical providers to enjoy the natural beauty of Swan's Island and join in island activities with our friendly island residents.</p>
             </div>
 
-            <div class="section">
+            <div class="box box--card">
                 <h3>Responsibilities of SIFA Medical Volunteers</h3>
                 
                 <h4>1. First Aid Walk-In Hours</h4>
@@ -232,9 +71,9 @@
 
             <div class="cta">
                 <h3>Ready to Join Us?</h3>
-                <p style="margin-bottom: 25px; font-size: 1.1em;">If you are interested in becoming a medical volunteer, please submit an application or contact us with any questions.</p>
+                <p style="margin-bottom: 25px;">If you are interested in becoming a medical volunteer, please submit an application or contact us with any questions.</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe60681XQ9ocTJhqylT1zx6tZ7hiVCh7QCWW-kPr77VB7YLHQ/viewform?usp=dialog" class="btn" target="_blank">Submit Application</a>
-                <p style="margin-top: 25px;">Questions? Email us at <a href="mailto:sifaclinicteam@gmail.com" class="email">sifaclinicteam@gmail.com</a></p>
+                <p style="margin-top: 25px;">Questions? Email us at <a href="mailto:sifaclinicteam@gmail.com">sifaclinicteam@gmail.com</a></p>
             </div>
         </main>
         
